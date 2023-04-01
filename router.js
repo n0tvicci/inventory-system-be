@@ -48,5 +48,5 @@ module.exports = function (app) {
   app.post("/api/deleteProduct/:id", requireAuth, deleteProduct);
   app.post("/api/updateProduct/:id", requireAuth, updateProduct);
 
-  app.post("/api/contactus", contactUs);
+  app.post("/api/contactus", requireAuth, contactUs);
 };

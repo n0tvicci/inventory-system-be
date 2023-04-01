@@ -4,8 +4,7 @@ const sendEmail = require("../utils/sendEmail");
 module.exports.contactUs = async (req, res) => {
   try {
     const { subject, message } = req.body;
-    // const user = await User.findById(req.user._id);
-    const user = await User.findById("63b43d12a216a4fd87f32bc3");
+    const user = await User.findById(req.user._id);
 
     if (!user) {
       return res.status(400).send({ error: "User not found, please signup." });
